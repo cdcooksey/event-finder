@@ -1,0 +1,1 @@
+json.array! @events, partial: 'v1/events/show', as: :event
