@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe Task do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { task }
+  let(:task) { create(:task) }
+
+  it { should be_kind_of(Task) }
+
+  describe '#offer relationship' do
+    subject { Task.reflect_on_association(:offer).macro }
+    it { should eq(:belongs_to) }
+  end
 end
