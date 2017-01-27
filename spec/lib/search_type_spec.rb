@@ -83,6 +83,11 @@ describe SearchType do
         let(:params) { { lat: lat, long: long, radius: '' } }
         it { should raise_error(StandardError) }
       end
+
+      context 'date exists without retailer_id' do
+        let(:params) { { date: date } }
+        it { should raise_error(StandardError) }
+      end
     end
 
   end
