@@ -2,6 +2,12 @@ class Event < ActiveRecord::Base
   belongs_to :store
   belongs_to :customer, foreign_key: :customer_id, primary_key: :customer_id
 
+  # https://github.com/geokit/geokit-rails
+  acts_as_mappable :default_units   => :miles,
+                   :default_formula => :sphere,
+                   :lat_column_name => :lat,
+                   :lng_column_name => :long
+
   class << self
     # @Params Integer|String retailer_id
     def find_by_retailer_id(retailer_id)
@@ -14,5 +20,11 @@ class Event < ActiveRecord::Base
       joins(store: :retailer).where('stores.retailer_id = ? AND DATE(events.event_at) = ?', retailer_id, date)
     end
 
+    # @Params Float|String lat
+    # @Params Float|String long
+    # @Params Integer|String radius
+    def find_by_location(lat, long, radius)
+      within(radius, origin: [lat, long])
+    end
   end
 end
