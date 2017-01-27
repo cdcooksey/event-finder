@@ -1,6 +1,10 @@
 module V1
   class EventsController < ApplicationController
 
+    # The README.md instructions say to create "endspoints" (plural) for one or more of the search types.
+    # All three search types return an Event collection, so I've consolidated it into a single endpoint.
+    # Consumers of the API shouldn't need to hit 3 different endpoints to find Events.
+
     def index
       begin
         @events = events

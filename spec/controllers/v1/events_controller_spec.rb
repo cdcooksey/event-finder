@@ -9,7 +9,6 @@ describe V1::EventsController, type: :request  do
     before { get v1_events_path, params: params }
     let(:params) { { retailer_id: retailer_id } }
 
-    # TODO Figure out why event.store => nilClass in let() but no where else.
     let(:retailer_id) { event.try(:store).try(:retailer_id) }
     let(:event) { create(:event) }
 
