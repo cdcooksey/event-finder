@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'geokit-rails'
 
 group :development do
   gem 'better_errors'
@@ -36,6 +37,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'simplecov'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'

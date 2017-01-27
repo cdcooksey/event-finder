@@ -1,5 +1,20 @@
 require 'spec_helper'
 
 describe Customer do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  subject { customer }
+  let(:customer) { create(:customer) }
+
+  it { should be_kind_of(Customer) }
+
+  describe '#events relationship' do
+    subject { Customer.reflect_on_association(:events).macro }
+    it { should eq(:has_many) }
+  end
+
+  describe '#receipts relationship' do
+    subject { Customer.reflect_on_association(:receipts).macro }
+    it { should eq(:has_many) }
+  end
+
 end
