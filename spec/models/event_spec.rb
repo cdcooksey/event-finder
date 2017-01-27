@@ -65,8 +65,8 @@ describe Event do
     subject { action }
     let(:action) { Event.find_by_location(event.lat, event.long, radius ) }
 
-    let(:radius) { 30 }
-    let(:event) { create(:event) }
+    let(:radius) { 10 }
+    let(:event) { create(:event, lat: '1.31', long: '1.31') }
 
     it { should_not be_empty }
     it { should be_kind_of(ActiveRecord::Relation) }
@@ -79,7 +79,7 @@ describe Event do
 
     # Sad path
     context 'when no results are found' do
-      let(:radius) { 2 }
+      let(:radius) { 73932 }
       it { should be_empty }
       it { should be_kind_of(ActiveRecord::Relation) }
     end
