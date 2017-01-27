@@ -1,0 +1,9 @@
+json.id           receipt.id
+json.name         receipt.store.retailer.name
+json.address      receipt.store.address
+json.city         receipt.store.city
+json.state        receipt.store.state
+json.zip          receipt.store.zip
+json.total_items  receipt.total_items
+json.total_amount receipt.total_amount
+json.datetime     receipt.created_at
