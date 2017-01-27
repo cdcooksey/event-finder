@@ -12,4 +12,9 @@ describe Customer do
     it { should eq(:has_many) }
   end
 
+  describe '#receipts relationship' do
+    subject { Customer.reflect_on_association(:receipts).macro }
+    it { should eq(:has_many) }
+  end
+
 end

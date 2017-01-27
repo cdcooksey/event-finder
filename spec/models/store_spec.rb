@@ -15,4 +15,9 @@ describe Store do
     subject { Store.reflect_on_association(:events).macro }
     it { should eq(:has_many) }
   end
+
+  describe '#receipts relationship' do
+    subject { Store.reflect_on_association(:receipts).macro }
+    it { should eq(:has_many) }
+  end
 end
