@@ -6,8 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module IbottaRailsDev
+module EventFinder
   class Application < Rails::Application
+    config.api_only = true
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: true,
