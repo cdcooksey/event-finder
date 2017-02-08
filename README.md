@@ -104,8 +104,3 @@ The database consists of sample data for 4 tables - customers, retailers, stores
 * Stores and events are bounded by roughly 30 miles around downtown Denver and are from roughly a 3 week timeframe.
 * Lat/long on customers is the latitude and longitude of their home zip code.
 * You may ignore the offers and tasks data for the purposes of this project.
-
-
-# Deliverable
----
-Please provide the code for the assignment either in a private repository (GitHub or Bitbucket) or as a zip file.
