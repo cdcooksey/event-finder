@@ -1,6 +1,8 @@
 # minimal Rails specific artifacts
 /log/*
 /tmp/*
+/coverage
+/db/test.sqlite*
 
 # RubyMine project files
 .idea
